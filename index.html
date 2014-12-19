@@ -1,15 +1,29 @@
 <!DOCTYPE HTML>
-<html ng-app="store">
+<html ng-app="store" lang="en">
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
 </head>
 <body>
 <script type="text/javascript" src="angular.min.js"></script>
 <script type="text/javascript" src="app.js"></script>
-<div ng-controller = "StoreController as store">
-<h1>{{store.product.name}}</h1>
-<h1>${{store.product.price}}</h1>
-<h1>{{store.product.description}}</h1>
+<div class="container" ng-controller = "StoreController as store">
+	<div class="row">
+		<div class="col-md-8">
+			<h1>{{store.product.name}}</h1>
+		</div>
+		<div class="col-md-4">
+			<h1>${{store.product.price}}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-8">	
+			<p class="lead">{{store.product.description}}</p>
+		</div>
+		<div class="col-md-4">
+			<button class="btn btn-primary" ng-show="store.product.canPurchase">Purchase</button>
+		</div>
+	</div>
 </div>
 </body>
 </html>
